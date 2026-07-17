@@ -230,6 +230,7 @@ img{ max-width: 100%; display:block; }
 .hero-logo{ width:100%; height:auto; }
 
 @media (max-width: 900px){
+  .hero-logo{ width:100%; height:auto; }
   .hero{ padding: 56px 0 72px; }
   .hero-inner{ grid-template-columns: 1fr; gap: 44px; }
   .hero-art{ order:-1; max-width:280px; margin:0 auto; }

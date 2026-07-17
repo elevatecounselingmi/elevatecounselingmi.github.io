@@ -86,7 +86,7 @@ if (form) {
         throw new Error('Server error');
       }
     } catch (err) {
-      note.textContent = "Something went wrong. Please call us at (248) 609-1422 or email info@elevatecounselingmi.com.";
+      note.textContent = "Something went wrong. Please call us at (248) 757-5925 or email info@elevatecounselingmi.com.";
     }
   });
 }

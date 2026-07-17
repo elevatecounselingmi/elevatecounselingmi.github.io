@@ -5,7 +5,7 @@
 
 header('Content-Type: text/plain');
 
-$to_email = "info@elevatecounselingmi.com";
+$to_email = "a@a.com";
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);

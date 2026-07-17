@@ -223,7 +223,7 @@ img{ max-width: 100%; display:block; }
   background: var(--white);
   border: 1px solid var(--oak-line);
   border-radius: var(--radius-lg);
-  padding: 0px;
+  padding: 10px;
   box-shadow: 0 30px 60px -30px rgba(43,42,37,.25);
   width: 140%; max-width: none;
 }

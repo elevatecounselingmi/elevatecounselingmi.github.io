@@ -1,0 +1,407 @@
+/* ==========================================================================
+   Team pages — extends css/styles.css
+   Design tokens (kept local so this file works whether or not styles.css
+   already defines a color system):
+   --team-cream        page background, warm neutral
+   --team-ink          body text
+   --team-ink-soft     secondary text
+   --team-forest       primary accent (growth motif, echoes "Room to grow")
+   --team-forest-deep  hover / pressed state
+   --team-forest-tint  pale tint for pill backgrounds
+   --team-gold         secondary accent for credential ribbon
+   --team-line         hairline dividers / borders
+   ========================================================================== */
+
+.team-page {
+  --team-cream: #faf6ee;
+  --team-ink: #2b2a28;
+  --team-ink-soft: #5c584f;
+  --team-forest: #3f5c4c;
+  --team-forest-deep: #2e463a;
+  --team-forest-tint: #e8efe9;
+  --team-gold: #ab8149;
+  --team-line: #e4dccb;
+
+  background: var(--team-cream);
+  color: var(--team-ink);
+}
+
+.team-page main {
+  background: var(--team-cream);
+}
+
+/* --- Breadcrumb --------------------------------------------------------- */
+.team-breadcrumb {
+  padding: 1.75rem 0 0;
+}
+
+.team-breadcrumb .wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: var(--team-ink-soft);
+}
+
+.team-breadcrumb a {
+  color: var(--team-forest);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.team-breadcrumb a:hover {
+  border-color: currentColor;
+}
+
+/* --- Profile hero --------------------------------------------------------
+   Signature element: the headshot sits inside an organic "growth ring" —
+   a soft double outline, echoing the hero-blob / path motifs used on the
+   homepage — rather than a plain square/circle crop.
+   ------------------------------------------------------------------------ */
+.profile-hero {
+  padding: 2.5rem 0 4rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.profile-portrait {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.portrait-ring {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+}
+
+.portrait-ring::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 44% 56% 58% 42% / 46% 42% 58% 54%;
+  border: 1.5px solid var(--team-forest);
+  opacity: 0.55;
+}
+
+.portrait-ring::after {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  border-radius: 56% 44% 42% 58% / 54% 58% 42% 46%;
+  border: 1px solid var(--team-gold);
+  opacity: 0.4;
+}
+
+.portrait-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 42% 58% 56% 44% / 44% 46% 54% 56%;
+  box-shadow: 0 18px 40px -20px rgba(43, 42, 40, 0.45);
+  display: block;
+}
+
+.profile-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.badge-link {
+  display: inline-flex;
+}
+
+.badge-link img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--team-forest);
+  color: #fff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.social-icon:hover {
+  background: var(--team-forest-deep);
+  transform: translateY(-2px);
+}
+
+.profile-copy .eyebrow {
+  color: var(--team-forest);
+}
+
+.profile-copy h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  margin: 0.25rem 0 0.35rem;
+  color: var(--team-ink);
+}
+
+.profile-credentials {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  color: var(--team-forest);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.35rem;
+}
+
+.profile-title {
+  font-family: "Work Sans", sans-serif;
+  color: var(--team-ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.profile-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 2.25rem;
+}
+
+.profile-copy .bio p {
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.75;
+  color: var(--team-ink);
+  margin: 0 0 1.1rem;
+}
+
+.profile-copy .bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Specialties ---------------------------------------------------------*/
+.specialties {
+  padding: 1rem 0 4.5rem;
+}
+
+.specialties-panel {
+  border-top: 1px solid var(--team-line);
+  padding-top: 2.75rem;
+}
+
+.specialties-block + .specialties-block {
+  margin-top: 2.25rem;
+}
+
+.specialties-block h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  margin: 0 0 1rem;
+  color: var(--team-ink);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--team-line);
+  color: var(--team-ink);
+  line-height: 1.2;
+}
+
+.pill.pill-top {
+  background: var(--team-forest);
+  border-color: var(--team-forest);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --- About-section teaser (embedded on the homepage) ---------------------*/
+.team-teaser {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--team-line, #e4dccb);
+}
+
+.team-teaser-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.team-teaser-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 42% 58% 56% 44% / 44% 46% 54% 56%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.team-teaser-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-teaser-copy {
+  flex: 1;
+  min-width: 220px;
+}
+
+.team-teaser-copy p.eyebrow {
+  margin-bottom: 0.25rem;
+}
+
+.team-teaser-copy h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  margin: 0 0 0.35rem;
+}
+
+.team-teaser-copy p.teaser-sub {
+  margin: 0;
+  color: var(--team-ink-soft, #5c584f);
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.6;
+}
+
+/* --- Team grid page (/team/index.html) -----------------------------------*/
+.team-grid-section {
+  padding: 1rem 0 5rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 2.25rem;
+  margin-top: 2.5rem;
+}
+
+.team-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+
+.team-card-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 220px;
+  margin: 0 auto 1.1rem;
+  border-radius: 42% 58% 56% 44% / 44% 46% 54% 56%;
+  overflow: hidden;
+  box-shadow: 0 14px 30px -18px rgba(43, 42, 40, 0.4);
+  transition: transform 0.25s ease;
+}
+
+.team-card:hover .team-card-photo {
+  transform: translateY(-4px);
+}
+
+.team-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-card h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+  margin: 0 0 0.15rem;
+}
+
+.team-card .card-credentials {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  color: var(--team-forest);
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.team-card .card-role {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  color: var(--team-ink-soft);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.team-card .card-link {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--team-forest);
+}
+
+.team-card-placeholder {
+  border: 1.5px dashed var(--team-line);
+  border-radius: 20px;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--team-ink-soft);
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  min-height: 260px;
+  text-align: center;
+}
+
+/* --- Responsive ------------------------------------------------------- */
+@media (max-width: 760px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .profile-cta {
+    justify-content: center;
+  }
+
+  .team-teaser-inner {
+    text-align: center;
+    justify-content: center;
+  }
+}

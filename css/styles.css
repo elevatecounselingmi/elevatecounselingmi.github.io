@@ -156,7 +156,7 @@ img{ max-width: 100%; display:block; }
   border-bottom: 1px solid rgba(28,27,23,.08);
   max-height:0; overflow:hidden; transition: max-height .35s var(--ease);
 }
-.mobile-nav.open{ max-height: 420px; }
+.mobile-nav.open{ max-height: 450px; }
 .mobile-nav a{
   padding: 16px 24px; text-decoration:none; color: var(--ink); font-weight:500;
   border-top: 1px solid rgba(28,27,23,.06);

@@ -71,12 +71,13 @@
   align-items: start;
 }
 
-.profile-portrait {
-  position: relative;
+.profile-sidebar {
+  position: sticky;
+  top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.75rem;
 }
 
 .portrait-ring {
@@ -129,6 +130,30 @@
   height: 40px;
   width: auto;
   display: block;
+}
+
+.sidebar-block {
+  width: 100%;
+  border-top: 1px solid var(--team-line);
+  padding-top: 1.5rem;
+}
+
+.sidebar-block h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  color: var(--team-ink);
+  text-align: center;
+}
+
+.profile-cta-sidebar {
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.profile-cta-sidebar .btn {
+  text-align: center;
 }
 
 .social-row {
@@ -207,13 +232,10 @@
 }
 
 /* --- Specialties ---------------------------------------------------------*/
-.specialties {
-  padding: 1rem 0 4.5rem;
-}
-
 .specialties-panel {
   border-top: 1px solid var(--team-line);
-  padding-top: 2.75rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 
 .specialties-block + .specialties-block {
@@ -249,6 +271,54 @@
   border-color: var(--team-forest);
   color: #fff;
   font-weight: 600;
+}
+
+/* --- Education (sidebar card) ----------------------------------------------*/
+.education-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.education-logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--team-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem;
+}
+
+.education-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.education-text {
+  font-family: "Work Sans", sans-serif;
+}
+
+.education-degree {
+  margin: 0 0 0.15rem;
+  font-weight: 600;
+  color: var(--team-ink);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.education-school {
+  margin: 0;
+  color: var(--team-forest);
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
 /* --- About-section teaser (embedded on the homepage) ---------------------*/
@@ -396,8 +466,23 @@
     text-align: center;
   }
 
+  .profile-sidebar {
+    position: static;
+    max-width: 320px;
+  }
+
   .profile-cta {
     justify-content: center;
+  }
+
+  .profile-cta-sidebar {
+    flex-direction: row;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .specialties-panel {
+    text-align: left;
   }
 
   .team-teaser-inner {

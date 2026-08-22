@@ -235,6 +235,29 @@ img{ max-width: 100%; display:block; }
   .hero-art{ order:-1; max-width:280px; margin:0 auto; }
   .hero-blob{ width:520px; height:520px; top:-140px; right:-160px; }
 }
+/* ============================================================
+   Founder Section
+   ============================================================ */
+    .founder-section { padding: 100px 0; background: var(--sage-pale); }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: minmax(200px, 280px) 1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+    .founder-portrait { display: flex; justify-content: center; }
+    .founder-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--sage-dark);
+      margin: 0 0 1em;
+    }
+    .founder-copy p.bio-text { font-size: 1.04rem; color: var(--ink); max-width: 58ch; }
+    .founder-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 1.6em; }
+    @media (max-width: 760px) {
+      .founder-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .founder-copy p.bio-text { max-width: 60ch; }
+    }
 
 /* ============================================================
    About
